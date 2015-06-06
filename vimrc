@@ -19,6 +19,7 @@ Plug 'bling/vim-bufferline'
 Plug 'bling/vim-airline'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 
 " Colorschemes
 Plug 'vim-scripts/dante.vim'
