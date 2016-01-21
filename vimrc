@@ -2,7 +2,7 @@
 " Vim script
 " File: "/home/caciano/.vimrc"
 " Created: "Thu, 23 May 2002 11:34:31 -0300 (caciano)"
-" Updated: "Fri, 05 Jun 2015 15:49:48 -0300 (caciano)"
+" Updated: "Fri, 20 Jan 2016 22:32:14 -0300 (caciano)"
 " Copyright (C) 2002, Caciano Machado <caciano.machado@ufrgs.br>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -12,14 +12,33 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug '~/my-prototype-plugin'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity'] }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
+Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
+Plug 'Valloric/YouCompleteMe', { 'for': 'cpp' }
+autocmd! User YouCompleteMe call youcompleteme#Enable()
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/perl-support.vim'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-bufferline'
 Plug 'bling/vim-airline'
 Plug 'mbbill/undotree'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
 
 " Colorschemes
 Plug 'vim-scripts/dante.vim'
@@ -140,4 +159,17 @@ nmap <s-left>   <c-w>h
 nmap <s-right>  <c-w>l
 
 " NERDTree
-nnoremap <F8> :NERDTreeToggle<cr>
+nnoremap <F7> :NERDTreeToggle<cr>
+
+" ----- xolox/vim-easytags settings -----
+" Where to look for tags files
+set tags=./tags;,~/.vimtags
+" Sensible defaults
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+
+nnoremap <F8> :TagbarToggle<cr>
+"autocmd BufEnter * nested :call tagbar#autoopen(0)

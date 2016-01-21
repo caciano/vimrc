@@ -1,0 +1,19 @@
+This is my collection of vim scripts and tools. It is distributed with the
+dowhateveryouwantware license. In order to install them, follow the
+instructions below:
+
+If you are using Ubuntu/Debian/Mint, make sure you have these packages
+installed: build-essential curl libclang1 libpython-dev
+For other distributions you need to check the equivalent packages
+
+Copy vim initialization file to your home directory
+$cp vimrc ~/.vimrc
+Copy vim configuration files directory to your home directory
+$cp vim ~/.vim
+
+Open vim or gvim
+Execute ":PlugInstall"
+Wait until all software is installed
+Close vim/gvim and open it again
+
+Caciano Machado <caciano.machado@ufrgs.br>
