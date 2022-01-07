@@ -9,16 +9,16 @@ Plug 'vim-syntastic/syntastic'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'xolox/vim-misc'
+Plug 'xolox/vim-misc' " required for vim-easytags
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer --cs-completer --go-completer --rust-completer --java-completer' }
 Plug 'davidhalter/jedi'
 Plug 'TovarishFin/vim-solidity'
 Plug 'vim-latex/vim-latex'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'voldikss/vim-floaterm'
 "" ----- colorschemes -----
 Plug 'junegunn/seoul256.vim'
@@ -139,7 +139,7 @@ let g:syntastic_check_on_wq = 0
 
 "" ----- youcompleteme settings -----
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_seed_identifiers_with_syntax = 1 " XXX crash opening some C/C++ files
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 "" ----- airline settings -----
@@ -155,8 +155,8 @@ let g:airline_left_sep = '»'
 let g:airline_right_sep = '«'
 let g:airline_symbols.colnr = ' c:'
 let g:airline_symbols.linenr = ' l:'
-let g:airline_symbols.maxlinenr = '⩩ '
-let g:airline_section_z = '⩩ %p%% %l(%L):%c'
+let g:airline_symbols.maxlinenr = '☰ '
+let g:airline_section_z = '☰  %p%% %l(%L):%c'
 
 "" ----- fugitive settings -----
 set statusline+=%{FugitiveStatusline()}
@@ -166,20 +166,21 @@ let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 "" ----- floaterm settings -----
-let g:floaterm_width = 0.7
-let g:floaterm_height = 0.7
+let g:floaterm_position = 'bottomright'
+let g:floaterm_width = 0.5
+let g:floaterm_height = 0.6
 "
 "" ----- jedi settings -----
 let g:ycm_autoclose_preview_window_after_completion=1
 
 "" ----- mappings -----
 let g:floaterm_keymap_toggle = '<F4>'
-nnoremap <c-leftmouse> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <F5> :FZF<cr>
 nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap <F7> :UndotreeToggle<cr>
 nnoremap <F8> :TagbarToggle<cr>
 nnoremap <F9> :setinvlist<cr>
+nnoremap <c-leftmouse> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <s-insert> <middleMouse>
 nnoremap <s-down>   <c-w>j
 nnoremap <s-up>     <c-w>k
