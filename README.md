@@ -1,5 +1,5 @@
 # Vim/NeoVim configuration file</h1>
-This is my vim/neovim configuration file. Feel free to use, copy, change and redistribute. The installation process below is for Linux Mint 20.2 and can be adapted for other platforms.
+This is my vim/neovim configuration file. Feel free to use, copy, change and redistribute. The installation process below is for Linux Mint 20.2 and can be adapted to other platforms.
 
 ## Requirements for Linux Mint 20.2
 
