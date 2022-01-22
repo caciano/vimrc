@@ -34,3 +34,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 ## Install vimrc file
 Copy vimrc file to ~/.vimrc, start the editor, run :PlugUpdate and wait until the installation process is finished.
+
+## Load .vimrc in NeoVim
+```
+mkdir .config/nvim
+cat <<EOF > ~/.config/nvim/init.vim
+set runtimepath^=~/.vim
+let &packpath=&runtimepath
+source ~/.vimrc
+EOF
+```
