@@ -15,6 +15,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer --cs-completer --go-completer --rust-completer --java-completer' }
 Plug 'davidhalter/jedi'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'TovarishFin/vim-solidity'
 Plug 'vim-latex/vim-latex'
 Plug 'ryanoasis/vim-devicons'
@@ -41,6 +42,7 @@ set backupdir=~/tmp,.,~/ " backup dir
 set backupskip=/tmp/*,~/tmp/* " path patterns to skip backup
 " set undodir=~/tmp,.,~/ " undo history file
 set autoread
+set nomodeline
 set history=1000
 set undolevels=1000
 set tabpagemax=50
@@ -146,6 +148,10 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#exclude_preview = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_close_button = 0
 
 "" ----- airline and devicons fonts settings -----
 if !exists('g:airline_symbols')
