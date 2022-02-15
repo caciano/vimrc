@@ -71,7 +71,6 @@ colorscheme seoul256
 set background=dark
 packadd! matchit
 set list
-set listchars+=eol:¬
 set listchars+=tab:··
 set listchars+=trail:·
 set listchars+=nbsp:+
@@ -185,7 +184,7 @@ nnoremap <F5> :FZF<cr>
 nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap <F7> :UndotreeToggle<cr>
 nnoremap <F8> :TagbarToggle<cr>
-nnoremap <F9> :setinvlist<cr>
+nnoremap <F9> :set invlist<cr>
 nnoremap <c-leftmouse> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <s-insert> <middleMouse>
 nnoremap <s-down>   <c-w>j
