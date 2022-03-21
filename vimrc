@@ -186,8 +186,10 @@ nnoremap <F7> :UndotreeToggle<cr>
 nnoremap <F8> :TagbarToggle<cr>
 nnoremap <F9> :set invlist<cr>
 nnoremap <c-leftmouse> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <s-insert> <middleMouse>
-nnoremap <s-down>   <c-w>j
-nnoremap <s-up>     <c-w>k
-nnoremap <s-left>   <c-w>h
-nnoremap <s-right>  <c-w>l
+nnoremap <s-down>       <c-w>j
+nnoremap <s-up>         <c-w>k
+nnoremap <s-left>       <c-w>h
+nnoremap <s-right>      <c-w>l
+nnoremap <c-s-right>    :bnext<cr>
+nnoremap <c-s-left>     :bprev<cr>
+
